@@ -1,0 +1,10 @@
+dotnet tool update --global dotnet-ef
+dotnet tool install --global dotnet-ef --version 7.0 
+
+cd .\Core-Domain\Rasta.ProjectManagment.Infrastructure
+dotnet ef migrations add Initial --context Rasta.ProjectManagment.Infrastructure.Persistence.ApplicationDbContext -o Persistence\Migrations --verbose 
+dotnet ef migrations add Change_Type 
+
+dotnet ef database update
+
+dotnet ef migrations remove --force

@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="BasicInformationProperty\EventHandlers\**" />
+    <EmbeddedResource Remove="BasicInformationProperty\EventHandlers\**" />
+    <None Remove="BasicInformationProperty\EventHandlers\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />-->
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="EPPlus" Version="6.2.6" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="7.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="7.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.9" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="System.IO.Pipelines" Version="7.0.0" />
+    <PackageReference Include="net.sf.mpxj-for-csharp" Version="12.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BasicInformationProperty\Commands\CreateBasicInformationProperty\" />
+    <Folder Include="BasicInformationProperty\Commands\DeleteBasicInformationProperty\" />
+    <Folder Include="BasicInformationProperty\Commands\UpdateBasicInformationProperty\" />
+    <Folder Include="BasicInformationProperty\Queries\GetBasicInformationPropertyWithPagination\" />
+    <Folder Include="MeasureUnit\EventHandlers\" />
+    <Folder Include="LookUp\EventHandlers\" />
+    <Folder Include="ProjectHRDailyReport\EventHandlers\" />
+    <Folder Include="ProjectMaterialDailyReport\EventHandlers\" />
+    <Folder Include="ProjectRepairsDailyReport\EventHandlers\" />
+    <Folder Include="ProjectType\Commands\CreateProjectType\" />
+    <Folder Include="ProjectType\Commands\DeleteProjectType\" />
+    <Folder Include="ProjectType\Commands\UpdateProjectType\" />
+    <Folder Include="ProjectType\EventHandlers\" />
+    <Folder Include="ProjectType\Queries\" />
+    <Folder Include="ProjectTypeRatio\EventHandlers\" />
+    <Folder Include="ProjectWeek\EventHandlers\" />
+    <Folder Include="ProjectWorkBreakdown\EventHandlers\" />
+    <Folder Include="WorkBreakdownStructure\EventHandlers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rasta.ProjectManagment.Domain\Rasta.ProjectManagment.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Common\LocalizationManager\Resources\Fa-Resource.Designer.cs">
+      <DependentUpon>Fa-Resource.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Common\LocalizationManager\Resources\Fa-Resource.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <LastGenOutput>Fa-Resource.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

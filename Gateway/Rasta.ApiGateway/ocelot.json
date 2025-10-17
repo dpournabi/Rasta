@@ -1,0 +1,43 @@
+{
+  "Routes": [
+
+    //{
+    //  "DownstreamPathTemplate": "/{everything}",
+    //  "DownstreamScheme": "http",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": "5000"
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/NovinMeyar.IdentityServer.Server/{everything}",
+    //  "UpstreamHttpMethod": [ "Post", "GET" ]
+    //},
+
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8000"
+        }
+      ],
+      "UpstreamPathTemplate": "/Rasta.ProjectManagment.Api/{everything}",
+      "UpstreamHttpMethod": [ "Post", "GET" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8001"
+        }
+      ],
+      "UpstreamPathTemplate": "/Rasta.CityService.Api/{everything}",
+      "UpstreamHttpMethod": [ "Post", "GET" ]
+    }
+  ]
+}
